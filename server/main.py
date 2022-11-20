@@ -2,6 +2,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get('/health')
+
+@app.get("/health")
 def get_health():
-    return 'ok'
+    return "ok"
