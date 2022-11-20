@@ -6,3 +6,9 @@ repos:
     hooks:
     -   id: black
         args: [--safe]
+
+-   repo: https://github.com/python-poetry/poetry.git
+    rev: 1.2.2
+    hooks:
+    -   id: poetry-export
+        args: [-f, requirements.txt, -o, requirements.txt]
