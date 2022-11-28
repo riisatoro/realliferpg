@@ -11,4 +11,10 @@ repos:
     rev: 1.2.2
     hooks:
     -   id: poetry-export
-        args: ["--dev", "-f", "requirements.txt", "-o", "requirements.txt"]
+        args: ["-f", "requirements.txt", "-o", "requirements.txt"]
+
+-   repo: https://github.com/pycqa/isort.git
+    rev: 5.10.1
+    hooks:
+    -   id: isort
+        args: ["server"]

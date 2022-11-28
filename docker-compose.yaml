@@ -6,6 +6,19 @@ services:
     build: .
     env_file:
       - .env
+    volumes:
+      - ./server:/app/
     ports:
       - 8000:8000
-    
+    depends_on:
+      - mongo
+
+  mongo:
+    container_name: rlr-mongo
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: rlruser
+      MONGO_INITDB_ROOT_PASSWORD: rlrpassword
+      MONGO_INITDB_DATABASE: rlrdb
+    ports:
+      - 27017:27017
