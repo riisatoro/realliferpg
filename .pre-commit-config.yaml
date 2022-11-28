@@ -1,20 +1,18 @@
-# See https://pre-commit.com for more information
-# See https://pre-commit.com/hooks.html for more hooks
 repos:
--   repo: https://github.com/psf/black.git
-    rev: 22.10.0
-    hooks:
-    -   id: black
-        args: [--safe]
-
 -   repo: https://github.com/python-poetry/poetry.git
     rev: 1.2.2
     hooks:
     -   id: poetry-export
         args: ["-f", "requirements.txt", "-o", "requirements.txt"]
 
--   repo: https://github.com/pycqa/isort.git
-    rev: 5.10.1
+# -   repo: https://github.com/pycqa/isort.git
+#     rev: 5.10.1
+#     hooks:
+#     -   id: isort
+#         args: ["server", "--formatter", "black"]
+
+-   repo: https://github.com/psf/black.git
+    rev: 22.10.0
     hooks:
-    -   id: isort
-        args: ["server"]
+    -   id: black
+        args: [--safe]
